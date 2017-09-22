@@ -1,0 +1,50 @@
+<div>
+  <form class="form-horizontal ">
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Student id : </label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="studentId" placeholder="Student id" [(ngModel)]="student.studentId"
+               name="id">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Student name : </label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="studentName" placeholder="Name" [(ngModel)]="student.name"
+               name="name">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Pen amount : </label>
+      <div class="col-sm-10 form-inline">
+        <button type="button" class="btn btn-primary btn-xs col-md-1 button-amount" (click)="downQuantity(student)">-
+        </button>
+        <input type="text" class="col-md-1 form-control input-amount" value="0" [(ngModel)]="student.penAmount"
+               name="penAmount">
+        <button type="button" class="btn btn-primary btn-xs col-md-1 button-amount" (click)="upQuantity(student)">+
+        </button>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">File input : </label>
+      <div class="col-sm-10">
+        <input type="file" class="btn btn-default" id="exampleInputFile" (change)="onFileChange($event,student)" >
+        <p class="help-block">Leave here for the file preview later.</p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Description : </label>
+      <div class="col-sm-10">
+        <textarea class="form-control" id="studentDescription" placeholder="Description" row="3"
+                  [(ngModel)]="student.description" name="description"></textarea>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default" (click)="addStudent(student)">Add</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+
